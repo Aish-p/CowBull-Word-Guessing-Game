@@ -1,15 +1,15 @@
 # CowBull-Word-Guessing-Game
-CowBull is a fun and interactive word guessing game, built with a combination of HTML, CSS, JavaScript, Node.js, Express, Webpack, and Babel. The game challenges players to guess a secret word within a limited number of attempts. The secret word is generated randomly, and the player receives feedback on each guess, represented as cows (correct letters in the wrong position) and bulls (correct letters in the correct position).
+CowBull is a fun and interactive word guessing game, built with a combination of **HTML, CSS, JavaScript, Node.js, Express, Webpack,** and **Babel**. The game challenges players to guess a secret word within a limited number of attempts. The secret word is generated randomly, and the player receives feedback on each guess, represented as cows (correct letters in the wrong position) and bulls (correct letters in the correct position).
 
 This project demonstrates the integration of both front-end and back-end technologies, where the front-end provides an engaging user interface and the back-end handles the generation of words and validation of guesses.
 
 ## Key Features:
-* Word Guessing: Players guess a secret word by entering letters into a grid.
-* Feedback System: Feedback is provided in the form of "cows" and "bulls" to help players adjust their guesses.
-* Responsive Layout: The game is fully responsive, making it playable on both desktop and mobile devices.
-* Dynamic Word Generation: Words are generated dynamically via external APIs to provide a new challenge each time.
-* Virtual Keyboard: Users can interact with the game using either a physical or a virtual on-screen keyboard.
-* Game Rules Reference: The game includes a built-in rules modal for quick reference.
+* **Word Guessing**: Players guess a secret word by entering letters into a grid.
+* **Feedback System**: Feedback is provided in the form of "cows" and "bulls" to help players adjust their guesses.
+* **Responsive Layout**: The game is fully responsive, making it playable on both desktop and mobile devices.
+* **Dynamic Word Generation**: Words are generated dynamically via external APIs to provide a new challenge each time.
+* **Virtual Keyboard**: Users can interact with the game using either a physical or a virtual on-screen keyboard.
+* **Game Rules Reference**: The game includes a built-in rules modal for quick reference.
 
 This project leverages Webpack for module bundling and Babel to ensure compatibility across modern browsers. The back-end, powered by Node.js and Express, manages API calls for word generation and validation, ensuring a seamless and dynamic gameplay experience.
 
@@ -35,13 +35,6 @@ Here are screenshots from the CowBull game page:
 
 
 <div align="center">
-  <p><strong>Game Guessing Grid with Virtual Keyboard and Result Display</strong></p>
-  <img src="/screenshots/guessing-grid.PNG" alt="Game Guessing Grid with virtual keyboard and result display" width="500">
-</div>
-<br>
-
-
-<div align="center">
   <p><strong>Game Grid Page</strong></p>
   <img src="/screenshots/game-grid.PNG" alt="Game Grid Page" width="500">
 </div>
@@ -51,6 +44,13 @@ Here are screenshots from the CowBull game page:
 <div align="center">
   <p><strong>Game Rules Reference Display</strong></p>
   <img src="/screenshots/game-rules-display.PNG" alt="Game Rules Reference Display" width="500">
+</div>
+<br>
+
+
+<div align="center">
+  <p><strong>Game Guessing Grid with Virtual Keyboard and Result Display</strong></p>
+  <img src="/screenshots/guessing-grid.PNG" alt="Game Guessing Grid with virtual keyboard and result display" width="500">
 </div>
 <br>
 
@@ -80,10 +80,10 @@ To run CowBull locally, follow these steps:
 5. Open your web browser and visit http://localhost:3000 to play CowBull.
 
 ## How to Play
-Welcome to CowBull, the word-guessing game!
+Welcome to **CowBull**, the word-guessing game!
 
 1. Enter your guesses using either the virtual keyboard or your physical keyboard.
-2. Submit your guess by clicking the Enter button.
+2. Submit your guess by clicking the **Enter** button.
 3. Based on your guess:
     * **Cows** indicate correct letters in the wrong position.
     * **Bulls** indicate correct letters in the correct position.
