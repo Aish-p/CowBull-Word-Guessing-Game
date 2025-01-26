@@ -1,5 +1,5 @@
 # CowBull-Word-Guessing-Game
-CowBull is a fun and interactive word guessing game, built with a combination of HTML, CSS, Vanilla JavaScript, Node.js, Express, Webpack, and Babel. The game challenges players to guess a secret word within a limited number of attempts. The secret word is generated randomly, and the player receives feedback on each guess, represented as cows (correct letters in the wrong position) and bulls (correct letters in the correct position).
+CowBull is a fun and interactive word guessing game, built with a combination of HTML, CSS, JavaScript, Node.js, Express, Webpack, and Babel. The game challenges players to guess a secret word within a limited number of attempts. The secret word is generated randomly, and the player receives feedback on each guess, represented as cows (correct letters in the wrong position) and bulls (correct letters in the correct position).
 
 This project demonstrates the integration of both front-end and back-end technologies, where the front-end provides an engaging user interface and the back-end handles the generation of words and validation of guesses.
 
@@ -62,14 +62,9 @@ Here are screenshots from the CowBull game page:
 <br>
 
 ## Installation
-
 To run CowBull locally, follow these steps:
 
 1. Clone the repository to your local machine.
-
-   ```bash
-   git clone 
-   ```
 2. Install the required dependencies.
    ```bash
    npm install
@@ -96,11 +91,11 @@ Welcome to CowBull, the word-guessing game!
 5. Guess the secret word before running out of attempts!
 
 ## API Usage
-This project utilizes two APIs:
+This project uses the following APIs:
 
 ### Random Word API
-The Random Word API is used to generate random words of a specific length. You can use the following URL to request a random word:
-https://random-word-api.herokuapp.com/word?number=1&length={wordLength}
+  * Generates a random word of a specific length to serve as the secret word.
 
 ### Dictionary API
-The Dictionary API is used to check if a word is valid and in the dictionary. You should obtain an API key from dictionaryapi.com and store it in your .env file as API_KEY.
+  * The Dictionary API is used to check if a word is valid and in the dictionary.
+  * Requires an API key, which you can obtain from dictionaryapi.com and store it in your .env file as API_KEY.
