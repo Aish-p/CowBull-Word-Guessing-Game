@@ -11,7 +11,7 @@ This project demonstrates the integration of both front-end and back-end technol
 * **Virtual Keyboard**: Users can interact with the game using either a physical or a virtual on-screen keyboard.
 * **Game Rules Reference**: The game includes a built-in rules modal for quick reference.
 
-This project leverages Webpack for module bundling and Babel to ensure compatibility across modern browsers. The back-end, powered by Node.js and Express, manages API calls for word generation and validation, ensuring a seamless and dynamic gameplay experience.
+This project leverages **Webpack** for module bundling and **Babel** to ensure compatibility across modern browsers. The back-end, powered by **Node.js** and **Express**, manages API calls for word generation and validation, ensuring a seamless and dynamic gameplay experience.
 
 ## Demo
 Here are screenshots from the CowBull game page:
