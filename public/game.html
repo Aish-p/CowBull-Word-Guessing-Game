@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/gameStyles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Game Title & Subtitle Begins -->
+    <header class="header-container">
+      <h1 class="title">
+        <span class="cow-animate">Cow</span>
+        <span class="bull-animate">Bull</span>
+      </h1>
+      <h2 class="subtitle">A word guessing game</h2>
+    </header>
+    <!-- Game Title & Subtitle Ends -->
+
+    <div class="reference-container">
+      <!-- Game Options Display Begins -->
+      <div class="game-options-container">
+        <div class="option-length">
+          Word Length: <span id="option-length"></span>
+        </div>
+        <div class="option-level">
+          Difficulty: <span id="option-level"></span>
+        </div>
+      </div>
+      <!-- Game Options Display Ends -->
+
+      <!-- Quick Icon Reference Display Begins-->
+      <div class="icons-reference-container">
+        <div class="bull-ref">
+          <span><img class="icons" src="./assets/bull-icon.png" alt="" /></span>
+          Same Position
+        </div>
+        <div class="cow-ref">
+          <span><img class="icons" src="./assets/cow-icon.png" alt="" /></span>
+          Different Position
+        </div>
+      </div>
+      <!-- Quick Icon Reference Display Ends -->
+
+      <!-- Rules Quick Reference Begins-->
+      <div class="rules-reference-container">
+        <button id="rules-button"><a href="#">Game Rules</a></button>
+      </div>
+      <!-- Rules Quick Reference Ends-->
+    </div>
+    <div class="message-container"></div>
+    <div class="content-container">
+      <!-- Guessing Grid Begins-->
+      <div id="game-container">
+        <div class="tiles-grid">
+          <!-- Grid generated via DOM -->
+        </div>
+      </div>
+
+      <!-- Guessing Grid Ends -->
+    </div>
+    <!-- Display game rules modal -->
+    <div id="rules-modal" class="rules-modal">
+      <div class="rules-modal-content">
+        <span id="close-rules-modal">&times;</span>
+        <h3 class="underline">Game Rules</h3>
+        <ul>
+          <li>
+            The game generates a <span class="highlights">random word</span> of
+            the chosen length.
+          </li>
+          <li>
+            The player has to guess the word within the given
+            <span class="highlights">number of attempts.</span>
+          </li>
+          <li>
+            After each guess, the game will provide feedback in the form of
+            <span class="highlights">'cows'</span> and
+            <span class="highlights">'bulls'.</span>
+          </li>
+          <li>
+            A <span class="highlights">'cow'</span> means a letter is in the
+            <span class="highlights">correct position,</span> and a
+            <span class="highlights">'bull'</span> means a letter is
+            <span class="highlights"
+              >in the word but in the wrong position.</span
+            >
+          </li>
+        </ul>
+        <p>
+          <span class="underline highlights">Note:</span> The word generated
+          will have
+          <span class="highlights">unique letters without repetitions.</span>
+        </p>
+      </div>
+    </div>
+    <!-- Display game rules modal ends -->
+    <!-- Virtual Keyboard Begins -->
+    <div id="keyboard-container">
+      <div class="keyboard-row">
+        <button data-key="q">q</button>
+        <button data-key="w">w</button>
+        <button data-key="e">e</button>
+        <button data-key="r">r</button>
+        <button data-key="t">t</button>
+        <button data-key="y">y</button>
+        <button data-key="u">u</button>
+        <button data-key="i">i</button>
+        <button data-key="o">o</button>
+        <button data-key="p">p</button>
+      </div>
+      <div class="keyboard-row">
+        <div class="spacer-half"></div>
+        <button data-key="a">a</button>
+        <button data-key="s">s</button>
+        <button data-key="d">d</button>
+        <button data-key="f">f</button>
+        <button data-key="g">g</button>
+        <button data-key="h">h</button>
+        <button data-key="j">j</button>
+        <button data-key="k">k</button>
+        <button data-key="l">l</button>
+        <div class="spacer-half"></div>
+      </div>
+      <div class="keyboard-row">
+        <button data-key="Enter" class="wide-button disabled" id="enterKey">
+          Enter
+        </button>
+        <button data-key="z">z</button>
+        <button data-key="x">x</button>
+        <button data-key="c">c</button>
+        <button data-key="v">v</button>
+        <button data-key="b">b</button>
+        <button data-key="n">n</button>
+        <button data-key="m">m</button>
+        <button
+          data-key="Backspace"
+          class="wide-button disabled"
+          id="deleteKey"
+        >
+          Del
+        </button>
+      </div>
+    </div>
+    <!-- Virtual Keyboard Ends -->
+    <!-- Quit button -->
+    <div class="quit-button-container">
+      <button id="quit-button">QUIT</button>
+    </div>
+    <div id="game-over-modal" class="game-over-modal hidden">
+      <div class="game-over-modal-content">
+        <span id="close-game-over-modal" class="close-symbol">&times;</span>
+        <h2 id="game-over-modal-title"></h2>
+        <p id="game-over-modal-message"></p>
+        <button id="game-over-play-again-button">
+          Play Again <i class="fas fa-redo"></i>
+        </button>
+      </div>
+    </div>
+    <script>
+      const currentYear = new Date().getFullYear();
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("current-year").textContent = currentYear;
+      });
+    </script>
+    <script type="module" src="js/bundle.js"></script>
+  </body>
+</html>

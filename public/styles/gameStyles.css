@@ -1,0 +1,647 @@
+/* Common styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    max-height: 100vh;
+    font-family: Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
+    background-color: #b7e4c7;
+    color:rgb(237, 233, 233);
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+
+ 
+  /* Header Styles */
+  .header-container {
+    background-color:#52b788 ;
+    color: rgb(237, 233, 233);
+    padding: 0.5em 0.75em;
+    text-align: center;
+    margin: 0 2rem;
+    width: 100vw;
+    margin-left: -1rem;
+    box-sizing: border-box;
+  }
+
+  .title {
+    display: inline-block;
+    font-size: 3em;
+    font-weight: bold;
+    color: darkgreen;
+    animation: roll-in 2s ease-out;
+    animation-fill-mode: forwards;
+  } 
+
+  .subtitle {
+    font-size: 1.5em;
+    font-weight: normal;
+  }
+  
+
+/* Reference Container styling */
+.reference-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: darkgreen;
+  font-weight: bold;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0.5rem 0.5rem 0;
+  border-bottom: 1px solid rgba(254, 254, 254, 0.5);
+}
+
+/* Game Options Container */
+.game-options-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.option-length,
+.option-level {
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+/* Icons Reference Container */
+.icons-reference-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.bull-ref,
+.cow-ref {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+.bull-ref span,
+.cow-ref span {
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.bull-ref img,
+.cow-ref img {
+  max-width: 100%;
+}
+
+/* Quick Rules Guide Container */
+.rules-reference-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+#rules-button, #quit-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff477e;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#rules-button a {
+  color: #fefefe;
+}
+#rules-button:hover {
+  background-color: #ff81b3;
+}
+
+
+/* Scrollable Content Container */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  padding:0.5em;
+  max-height: 60vh;
+  flex-grow: 1;
+  overflow: auto; 
+  max-width: 70%;
+  margin: 0 auto 1rem;
+  border: 1px solid black;
+}
+
+/* Game container - Guessing Grid */
+
+#game-container {  
+   display: flex;
+   background-color: #91ceaa;
+   margin: 0 auto;
+   justify-content: flex-start;
+   width: 800px;
+}
+.tiles-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 0.25rem 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Styles for each row of tiles */
+.tile-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Styles for each individual tile */
+.tile {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  border: 1px solid darkgreen;
+  border-radius: 5px;
+  background-color: white;
+  color:black;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Keyboard Styling */
+#keyboard-container {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+  margin: 0 auto 0.5rem;
+  touch-action: manipulation;
+}
+
+.keyboard-row button {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 0;
+  padding: 0;
+  height: 3.5rem;
+  cursor: pointer;
+  background-color: #00AB66;
+  border: 1px solid darkgreen;
+  color: white;
+  flex-grow: 1;
+  text-transform: uppercase;
+  margin-right: 0.45rem;
+  border-radius: 0.25rem;
+  user-select: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.keyboard-row button:hover {
+  transform: scale(1.1);
+}
+
+.keyboard-row button.wide-button {
+  flex-grow: 1.5;
+  background-color: rgb(233, 31, 65);
+}
+.keyboard-row .spacer-half {
+  flex-grow:0.5;
+}
+.disabled {
+  opacity: 0.5; 
+  pointer-events: none; 
+}
+/* Display Invalid Guesses*/
+.message-container {
+  color: rgb(233, 31, 65);
+  font-weight: bold;
+  height: 1rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+.invalid-guess {
+  border: 2px solid red !important;
+}
+
+/* Quit button styling */
+.quit-button-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#quit-button {
+  margin: 0 0.25rem;
+  background-color: rgb(31, 65, 233);
+  color:white;
+  padding: 1rem 1.25rem;
+}
+
+#quit-button:hover {
+  background-color: rgb(31, 125, 233);
+}
+ 
+
+/* Styling cow bull */
+/* Placeholders */
+.bulls,
+.cows {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 10rem;
+  border: 0.75px solid darkgreen;
+  margin-left: 2rem;
+}
+/* Cow and Bull Images */
+.bull-image,
+.cow-image {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  justify-content: flex-end;
+
+}
+
+.tile-row .bull-image,
+.tile-row .cow-image {
+  margin-left: -0.15rem;
+}
+
+/* No cow No Bull Message */
+.none-message {
+  color: rgb(53, 51, 51);
+  font-style: italic;
+  margin: 0 auto;
+}
+/* Game rules modal */
+.rules-modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.rules-modal-content {
+  background-color: #fefefe;
+  color: black;
+  margin: 15% auto; 
+  padding: 3.5rem 2rem 2rem;
+  border: 1px solid #888;
+  width: 80%; 
+  line-height: 2rem;
+  position: relative;
+}
+.rules-modal-content h3 {
+  margin-bottom: 1rem;
+}
+#close-rules-modal {
+  color: rgb(233, 31, 65);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#close-rules-modal:hover,
+#close-rules-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.highlights {
+  font-weight: bold;
+}
+.rules-modal-content p {
+  margin-top: 1rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Game Over Modal */
+.game-over-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.game-over-modal-content {
+  background-color: #fff;
+  padding: 5rem;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Modal Title */
+#game-over-modal-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: black;
+}
+
+/* Modal Message */
+#game-over-modal-message {
+  font-size: 1.6rem;
+  margin: 2rem 0;
+  color: #36454F;
+}
+
+/* Play Again Button */
+#game-over-play-again-button {
+  padding: 1rem 2rem;
+  background-color: rgb(35, 152, 35);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin: 2rem 0;
+}
+
+#game-over-play-again-button:hover {
+  background-color: rgb(218, 14, 31);
+}
+
+.hidden {
+  display: none;
+}
+.close-symbol {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  color: black;
+  cursor: pointer;
+}
+
+.close-symbol:hover {
+  color: rgb(218, 31, 31);
+}
+.target-word {
+  color: rgb(218, 31, 31);
+  font-weight: bold;
+}
+
+/* Footer Styling */
+
+footer {
+  background-color: #37c583;
+  padding: 0;
+  text-align: center;
+  color: darkgreen;
+  width: 100vw;
+  box-sizing: border-box;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: 2rem;
+  
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%; 
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+}
+.footer-content p:first-child {
+  margin-bottom: 1rem;
+}
+.footer-content a, .links {
+  color: rgb(117, 6, 117);
+  text-decoration: none;
+}
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.footer-content .copyright {
+  font-size: 0.8rem;
+  color: white;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1024px) { 
+  .title {
+    font-size: 5em;
+  }
+  .subtitle {
+    font-size: 3em;
+  }
+  .reference-container {
+    padding: 1.75rem;
+  }
+  /* Game Options Container */
+  .game-options-container,
+  .icons-reference-container {
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+
+  .option-length,
+  .option-level,
+  .bull-ref,
+  .cow-ref {
+    margin-right: 0; 
+    margin-bottom: 0.5rem; 
+  }
+  /* Rules modal */
+  .rules-reference-container {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .rules-modal-content {
+    padding: 3rem;
+    width: 80%;
+    line-height: 2.75rem;
+    font-size: 1.5rem;
+  }
+  .rules-modal-content h3 {
+    margin-bottom: 1.75rem;
+    font-size: 2rem;
+  }
+  #close-rules-modal {
+    font-size: 3rem;
+  }
+  .rules-modal-content p {
+    margin-top: 1.5rem;
+  }
+  #quit-button {
+    font-size: 1.25rem;
+  }
+ 
+  /* Game container */
+  .content-container {
+    max-width: 100%;
+  }
+  #game-container {
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+  .tiles-grid {
+    max-width: none;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .tile-row {
+    width: max-content;
+  }
+  #keyboard-container {
+    margin-bottom: 2.5rem;
+  }
+  footer {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .title {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1.25em;
+  }
+  .reference-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0;
+    border-bottom: none;
+  }
+  .game-options-container,
+  .icons-reference-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+    margin: 0;
+  }
+  .option-length,
+  .option-level,
+  .bull-ref,
+  .cow-ref {
+    margin-right: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+  #rules-button {
+    font-size: 0.75rem;
+    padding:0.5rem;
+    margin-bottom: 0;
+  }
+  .quit-button-container {
+    margin:0;
+  }
+  #quit-button {
+    padding: 0.5rem 0.75rem;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .message-container {
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+  .rules-reference-container {
+    margin-bottom: 0;
+  }
+  .rules-modal-content {
+    padding: 2rem;
+    width: 90%;
+    line-height: 1.5rem;
+    font-size: 1rem;
+  }
+  .rules-modal-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  #close-rules-modal {
+    font-size: 2rem;
+  }
+  .rules-modal-content p {
+    margin-top: 1rem;
+  }
+ .content-container {
+  background-color: white;
+  padding:0;
+  border: none;
+  max-height: 60vh;
+ }
+
+ .tiles-grid {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding:0;
+ }
+ .tile {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0.25rem;
+  font-size: 1.25rem;
+ }
+ 
+ .keyboard-row button {
+    font-size: 0.75rem;
+    height: 2rem;
+  }
+
+  footer {
+    padding: 0.15rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .game-over-modal-content {
+    padding: 3rem;
+  }
+}
